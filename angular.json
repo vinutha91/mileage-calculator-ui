@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mileage-calculator-ui"
+    }
+  },
+  "defaultProject": "mileage-calculator-ui",
+  "cli": {
+    "analytics": "7d18d629-7541-4f5d-8b31-6c1d486115e9"
+  }
 }
