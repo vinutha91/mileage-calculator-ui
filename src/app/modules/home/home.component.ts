@@ -15,10 +15,10 @@ export class HomeComponent implements OnInit {
   error: string;
   form = new FormGroup({
     vehicleNo: new FormControl('', [Validators.required]),
-     userEmail: new FormControl('', [Validators.required, Validators.email]),
+   //  userEmail: new FormControl('', [Validators.required, Validators.email]),
     // userEmail: new FormControl('', [Validators.required]),
     vehicleModel: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    initialKmsReading: new FormControl('', [Validators.required])
+    initialKmsReading: new FormControl('', [Validators.required,Validators.pattern(/^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/)])
   });
   isSubmitted = false;
   ngOnInit(): void {

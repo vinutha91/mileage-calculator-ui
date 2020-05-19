@@ -11,7 +11,7 @@
 body,html{
   height:100% !important;
   margin:0 !important;
-  font-size:10px;
+  font-size:62.5%;  //10/16 - which is browser default
 }
 body{
   display: flex;
@@ -113,6 +113,9 @@ body{
   /*url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff)
   format('woff');*/
 
+}
+.alert-danger{
+  font-size:1.5rem;
 }
 @import "./styles/1_settings/settings";
 @import "./styles/3_generic/generic";

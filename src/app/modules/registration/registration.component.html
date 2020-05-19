@@ -1,0 +1,58 @@
+ <div class="main-container">
+   <form [formGroup]="form" (ngSubmit)="submit()">
+     <div class="form-group">
+       <label class="col-3">
+         User Name
+       </label>
+       <input class="col-9" formControlName="username" type="text" class="form-control" placeholder="User Name"/>
+     </div>
+
+     <div *ngIf="(isSubmitted && formCntrls.username.errors) || (formCntrls.username.touched && formCntrls.username.invalid)" class="alert alert-danger">
+       <div *ngIf="formCntrls.username.errors.required">First name is required.</div>
+     </div>
+
+
+
+     <div class="form-group">
+       <label class="col-3">
+         Email Address
+       </label>
+       <input class="col-9" formControlName="email" type="email" class="form-control" placeholder="Email Address"/>
+     </div>
+
+     <div *ngIf="(isSubmitted && formCntrls.email.errors) || (formCntrls.email.touched && formCntrls.email.invalid)" class="alert alert-danger">
+       <div *ngIf="formCntrls.email.errors.required">Email is required.</div>
+       <div *ngIf="formCntrls.email.errors.email">Please, enter a valid email address.</div>
+     </div>
+
+
+
+     <div class="form-group">
+       <label class="col-3">
+         Password
+       </label>
+       <input class="col-9" formControlName="password" type="password" class="form-control" placeholder="Password"/>
+     </div>
+
+     <div *ngIf="(isSubmitted && formCntrls.password.errors) || (formCntrls.password.touched && formCntrls.password.invalid)" class="alert alert-danger">
+       <div *ngIf="formCntrls.password.errors.required">Password is required.</div>
+     </div>
+
+
+     <div class="align-center">
+       <button type="submit" class="btn btn-primary">Register</button>
+     </div>
+   </form>
+
+   <div *ngIf="userRegistered">
+      <h2>
+        You are registered successfully. Please click <a [routerLink]="['/login']" href="">here</a> to login.
+      </h2>
+   </div>
+   <div>
+     <h2>
+     Already have an account? Please click <a [routerLink]="['/login']">here</a> to login.
+     </h2>
+   </div>
+</div>
+

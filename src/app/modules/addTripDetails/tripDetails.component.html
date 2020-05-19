@@ -12,9 +12,9 @@
         <label class="col-3">
           Current Kms Reading
         </label>
-        <input class="col-9" formControlName="currentKmsReading" [(ngModel)] = "currentKmsReading" (blur)="validateReading()" type="number" class="form-control" placeholder="Current Kms Reading"/>
+        <input class="col-9" formControlName="currentKmsReading" [(ngModel)] = "currentKmsReading" type="number" class="form-control" placeholder="Current Kms Reading"/>
       </div>
-
+     123:: {{formCntrls.currentKmsReading}}
       <div *ngIf="(isSubmitted && formCntrls.currentKmsReading.errors) || (formCntrls.currentKmsReading.touched && formCntrls.currentKmsReading.invalid)" class="alert alert-danger">
         <div *ngIf="formCntrls.currentKmsReading.errors.required">Current reading is required.</div>
         <div *ngIf="formCntrls.currentKmsReading.errors.min">Your current trip reading cannot be lesser than your previous trip.</div>
@@ -29,7 +29,9 @@
 
       <div *ngIf="(isSubmitted && formCntrls.petrolFilledForAmt.errors) || (formCntrls.petrolFilledForAmt.touched && formCntrls.petrolFilledForAmt.invalid)" class="alert alert-danger">
         <div *ngIf="formCntrls.petrolFilledForAmt.errors.required">Price is required.</div>
-      </div>
+        <div *ngIf="formCntrls.petrolFilledForAmt.errors.min">Please enter a valid price.</div>
+</div>
+
 
       <div class="form-group">
         <label class="col-3">
@@ -40,7 +42,8 @@
 
       <div *ngIf="(isSubmitted && formCntrls.fuelPricePerltr.errors) || (formCntrls.fuelPricePerltr.touched && formCntrls.fuelPricePerltr.invalid)" class="alert alert-danger">
         <div *ngIf="formCntrls.fuelPricePerltr.errors.required">Price is required.</div>
-</div>
+        <div *ngIf="formCntrls.fuelPricePerltr.errors.min">Please enter a valid fuel price per litre.</div>
+      </div>
 
       <div class="form-group">
         <label class="col-3">
@@ -50,7 +53,8 @@
       </div>
       <div class="">
         <button type="" class="btn btn-primary">Reset</button>
-        <button type="submit" class="btn btn-primary">Add Trip</button>
+        <button type="submit" cla="btn btn-primary">Add Trip</button>
+        <button type="" class="btn btn-primary">View mileage data</button>
       </div>
     </form>
 </div>

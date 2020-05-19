@@ -1,6 +1,7 @@
 <div class="main-container">
   <form [formGroup]="form" (ngSubmit)="submit()">
-      <div class="form-group">
+
+    <!--<div class="form-group">
         <label class="col-3">
           Email Address
         </label>
@@ -10,9 +11,10 @@
           <div *ngIf="(isSubmitted && formCntrls.userEmail.errors) || (formCntrls.userEmail.touched && formCntrls.userEmail.invalid)" class="alert alert-danger">
             <div *ngIf="formCntrls.userEmail.errors.required">Email is required.</div>
             <div *ngIf="formCntrls.userEmail.errors.email">Please, enter a valid email address.</div>
-          </div>
+          </div>-->
 
 
+    <h2>Register Vehicle</h2>
       <div class="form-group">
         <label class="col-3">
           Vehicle no.
@@ -46,6 +48,7 @@
 
     <div *ngIf="(isSubmitted && formCntrls.initialKmsReading.errors) || (formCntrls.initialKmsReading.touched && formCntrls.initialKmsReading.invalid)" class="alert alert-danger">
       <div *ngIf="formCntrls.initialKmsReading.errors.required">Initial reading is required.</div>
+      <div *ngIf="formCntrls.initialKmsReading.errors.pattern">Please enter a valid numeric reading.</div>
     </div>
 
     <div class="align-center">
